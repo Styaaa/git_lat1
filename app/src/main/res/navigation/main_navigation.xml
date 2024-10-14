@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/itemHome">
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="com.ivano.uas_anmp_baru.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/actionDetailHome"
+            app:destination="@id/detailHomeFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHomeFragment2"
+        android:name="com.ivano.uas_anmp_baru.view.AchievementsFragment"
+        android:label="fragment_detail_home"
+        tools:layout="@layout/fragment_achievements">
+        <argument
+            android:name="game_id"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemSchedule"
+        android:name="com.ivano.uas_anmp_baru.view.SchduleFragment"
+        android:label="SchduleFragment"
+        tools:layout="@layout/fragment_schdule">
+        <action
+            android:id="@+id/actionScheduleDetail"
+            app:destination="@id/scheduleDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemAbout"
+        android:name="com.ivano.uas_anmp_baru.view.AboutFragment"
+        android:label="AboutFragment"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/scheduleDetailFragment"
+        android:name="com.ivano.uas_anmp_baru.view.ScheduleDetailFragment"
+        android:label="fragment_schedule_detail"
+        tools:layout="@layout/fragment_schedule_detail">
+        <argument
+            android:name="id_schedule"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="tgl"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="event"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="waktu_mulai"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="waktu_selesai"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="description"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="lokasi"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="game"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="team"
+            app:argType="string"
+            android:defaultValue="EXP" />
+        <argument
+            android:name="image_url"
+            app:argType="string"
+            android:defaultValue="val.jpg" />
+    </fragment>
+</navigation>
